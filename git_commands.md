@@ -24,3 +24,7 @@ git commit -m "Adding start text file"
 git status
 git push origin master
 
+git config --global core.editor "notepad++.exe -multiInst -nosession"
+
+
+
