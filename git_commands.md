@@ -1,23 +1,13 @@
 Git Quick Start Commands
-Command Listing, Part 1
-pwd
-mkdir projects
-cd projects
-pwd
-Command Listing, Part 2
+
 git version
 git config --global user.name "Abe Lincoln"
 git config --global user.email "mrabe@git.training"
 git config --global --list
 git clone github-https-url  # paste in your GitHub HTTPS clone URL
-ls
-cd github-demo
-ls
+
 git status
 echo "Test Git Quick Start demo" >> start.txt
-ls
-cat start.txt
-git status
 git add start.txt
 git status
 git commit -m "Adding start text file"
@@ -27,3 +17,7 @@ git push origin master
 git config --global core.editor "notepad++.exe -multiInst -nosession"
 
 git config --global credential.helper 'store'
+
+git rebase <merged branch>
+git rebase --abort
+ 
