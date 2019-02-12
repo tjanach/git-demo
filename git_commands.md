@@ -26,5 +26,4 @@ git push origin master
 
 git config --global core.editor "notepad++.exe -multiInst -nosession"
 
-
-
+git config --global credential.helper 'store'
