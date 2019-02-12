@@ -1,0 +1,63 @@
+[user]
+	name = Tomasz Janaszka
+	email = tomasz.janaszka@orange.com
+[core]
+	editor = atom --wait
+[color]
+  ui = true
+  diff = true
+  branch = auto
+	status = auto
+[alias]
+	hist = log --all --graph --decorate --oneline
+	new = checkout -b
+	co = checkout
+	ci = commit
+	cm = commit -m
+	cam = commit -am
+	ca = commit --amend # careful
+	st = status
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen--> %cr%Creset by %Cblue%cN <%cE>%Creset' --abbre v-commit --date=relative
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	s = status --short
+	a = !git add . && git status
+	au = !git add -u . && git statustus
+	aa = !git add . && git add -u . && git status
+	ac = !git add . && git commit
+	acm = !git add . && git commit -m
+	dtp4 = difftool --tool=p4merge
+	dtk3 = difftool --tool=kdiff3
+	mtp4 = mergetool --tool=p4merge
+	mtk3 = mergetool --tool=kdiff3
+[merge]
+  keepBackup = false;
+  tool = p4merge
+[mergetool]
+  prompt = false
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+[mergetool "kdiff3"]
+	cmd = kdiff3 "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+[diff]
+  tool = p4merge
+[difftool]
+  prompt = false
+[difftool "p4merge"]
+  cmd = p4merge "$LOCAL" "$REMOTE"
+  keepTemporaries = false
+  trustExitCode = false
+	keepBackup = false
+[difftool "kdiff3"]
+	cmd = kdiff3 "$LOCAL" "$REMOTE"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
